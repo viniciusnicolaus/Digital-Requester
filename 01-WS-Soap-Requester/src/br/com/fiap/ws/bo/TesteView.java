@@ -1,7 +1,5 @@
 package br.com.fiap.ws.bo;
 
-import org.apache.catalina.ant.ResourcesTask;
-
 import br.com.fiap.ws.bo.FiapBOStub.CalcularMedia;
 import br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse;
 
