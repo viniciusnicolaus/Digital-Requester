@@ -1,20 +1,20 @@
 
 /**
- * FiapBOStub.java
+ * EstoqueBOStub.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
-        package br.com.fiap.ws.bo;
+        package com.fiap.loja.bo;
 
         
 
         /*
-        *  FiapBOStub java implementation
+        *  EstoqueBOStub java implementation
         */
 
         
-        public class FiapBOStub extends org.apache.axis2.client.Stub
+        public class EstoqueBOStub extends org.apache.axis2.client.Stub
         {
         protected org.apache.axis2.description.AxisOperation[] _operations;
 
@@ -38,18 +38,18 @@
     private void populateAxisService() throws org.apache.axis2.AxisFault {
 
      //creating the Service with a unique name
-     _service = new org.apache.axis2.description.AxisService("FiapBO" + getUniqueSuffix());
+     _service = new org.apache.axis2.description.AxisService("EstoqueBO" + getUniqueSuffix());
      addAnonymousOperations();
 
         //creating the operations
         org.apache.axis2.description.AxisOperation __operation;
 
-        _operations = new org.apache.axis2.description.AxisOperation[3];
+        _operations = new org.apache.axis2.description.AxisOperation[2];
         
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br", "calularPsMedia"));
+            __operation.setName(new javax.xml.namespace.QName("http://bo.loja.fiap.com", "listar"));
 	    _service.addOperation(__operation);
 	    
 
@@ -61,25 +61,13 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br", "calcularPs"));
+            __operation.setName(new javax.xml.namespace.QName("http://bo.loja.fiap.com", "consultarProduto"));
 	    _service.addOperation(__operation);
 	    
 
 	    
 	    
             _operations[1]=__operation;
-            
-        
-                   __operation = new org.apache.axis2.description.OutInAxisOperation();
-                
-
-            __operation.setName(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br", "calcularMedia"));
-	    _service.addOperation(__operation);
-	    
-
-	    
-	    
-            _operations[2]=__operation;
             
         
         }
@@ -95,7 +83,7 @@
       *Constructor that takes in a configContext
       */
 
-    public FiapBOStub(org.apache.axis2.context.ConfigurationContext configurationContext,
+    public EstoqueBOStub(org.apache.axis2.context.ConfigurationContext configurationContext,
        java.lang.String targetEndpoint)
        throws org.apache.axis2.AxisFault {
          this(configurationContext,targetEndpoint,false);
@@ -105,7 +93,7 @@
    /**
      * Constructor that takes in a configContext  and useseperate listner
      */
-   public FiapBOStub(org.apache.axis2.context.ConfigurationContext configurationContext,
+   public EstoqueBOStub(org.apache.axis2.context.ConfigurationContext configurationContext,
         java.lang.String targetEndpoint, boolean useSeparateListener)
         throws org.apache.axis2.AxisFault {
          //To populate AxisService
@@ -119,31 +107,34 @@
                 targetEndpoint));
         _serviceClient.getOptions().setUseSeparateListener(useSeparateListener);
         
+            //Set the soap version
+            _serviceClient.getOptions().setSoapVersionURI(org.apache.axiom.soap.SOAP12Constants.SOAP_ENVELOPE_NAMESPACE_URI);
+        
     
     }
 
     /**
      * Default Constructor
      */
-    public FiapBOStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
+    public EstoqueBOStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://localhost:8080/04-WS-Soap-Provider/services/FiapBO.FiapBOHttpSoap11Endpoint/" );
+                    this(configurationContext,"http://localhost:8080/05-WS-Estoque/services/EstoqueBO.EstoqueBOHttpSoap12Endpoint/" );
                 
     }
 
     /**
      * Default Constructor
      */
-    public FiapBOStub() throws org.apache.axis2.AxisFault {
+    public EstoqueBOStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://localhost:8080/04-WS-Soap-Provider/services/FiapBO.FiapBOHttpSoap11Endpoint/" );
+                    this("http://localhost:8080/05-WS-Estoque/services/EstoqueBO.EstoqueBOHttpSoap12Endpoint/" );
                 
     }
 
     /**
      * Constructor taking the target endpoint
      */
-    public FiapBOStub(java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
+    public EstoqueBOStub(java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
         this(null,targetEndpoint);
     }
 
@@ -153,16 +144,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see br.com.fiap.ws.bo.FiapBO#calularPsMedia
-                     * @param calularPsMedia0
+                     * @see com.fiap.loja.bo.EstoqueBO#listar
+                     * @param listar0
                     
                      */
 
                     
 
-                            public  br.com.fiap.ws.bo.FiapBOStub.CalularPsMediaResponse calularPsMedia(
+                            public  com.fiap.loja.bo.EstoqueBOStub.ListarResponse listar(
 
-                            br.com.fiap.ws.bo.FiapBOStub.CalularPsMedia calularPsMedia0)
+                            com.fiap.loja.bo.EstoqueBOStub.Listar listar0)
                         
 
                     throws java.rmi.RemoteException
@@ -171,7 +162,7 @@
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
                org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[0].getName());
-              _operationClient.getOptions().setAction("urn:calularPsMedia");
+              _operationClient.getOptions().setAction("urn:listar");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
               
@@ -189,10 +180,10 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    calularPsMedia0,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calularPsMedia")), new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calularPsMedia"));
+                                                    listar0,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                    "listar")), new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                    "listar"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -213,25 +204,25 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             br.com.fiap.ws.bo.FiapBOStub.CalularPsMediaResponse.class,
+                                             com.fiap.loja.bo.EstoqueBOStub.ListarResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (br.com.fiap.ws.bo.FiapBOStub.CalularPsMediaResponse)object;
+                                        return (com.fiap.loja.bo.EstoqueBOStub.ListarResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calularPsMedia"))){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listar"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calularPsMedia"));
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listar"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
                         java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
                         java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calularPsMedia"));
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listar"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -275,20 +266,20 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see br.com.fiap.ws.bo.FiapBO#startcalularPsMedia
-                    * @param calularPsMedia0
+                * @see com.fiap.loja.bo.EstoqueBO#startlistar
+                    * @param listar0
                 
                 */
-                public  void startcalularPsMedia(
+                public  void startlistar(
 
-                 br.com.fiap.ws.bo.FiapBOStub.CalularPsMedia calularPsMedia0,
+                 com.fiap.loja.bo.EstoqueBOStub.Listar listar0,
 
-                  final br.com.fiap.ws.bo.FiapBOCallbackHandler callback)
+                  final com.fiap.loja.bo.EstoqueBOCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[0].getName());
-             _operationClient.getOptions().setAction("urn:calularPsMedia");
+             _operationClient.getOptions().setAction("urn:listar");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
               
@@ -306,10 +297,10 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    calularPsMedia0,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calularPsMedia")), new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calularPsMedia"));
+                                                    listar0,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                    "listar")), new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                    "listar"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -327,13 +318,13 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         br.com.fiap.ws.bo.FiapBOStub.CalularPsMediaResponse.class,
+                                                                         com.fiap.loja.bo.EstoqueBOStub.ListarResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultcalularPsMedia(
-                                        (br.com.fiap.ws.bo.FiapBOStub.CalularPsMediaResponse)object);
+                                        callback.receiveResultlistar(
+                                        (com.fiap.loja.bo.EstoqueBOStub.ListarResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorcalularPsMedia(e);
+                                callback.receiveErrorlistar(e);
                             }
                             }
 
@@ -342,15 +333,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calularPsMedia"))){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listar"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calularPsMedia"));
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listar"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
 													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
                                                     java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calularPsMedia"));
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listar"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -358,37 +349,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorcalularPsMedia(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorlistar(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalularPsMedia(f);
+                                                callback.receiveErrorlistar(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalularPsMedia(f);
+                                                callback.receiveErrorlistar(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalularPsMedia(f);
+                                                callback.receiveErrorlistar(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalularPsMedia(f);
+                                                callback.receiveErrorlistar(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalularPsMedia(f);
+                                                callback.receiveErrorlistar(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalularPsMedia(f);
+                                                callback.receiveErrorlistar(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalularPsMedia(f);
+                                                callback.receiveErrorlistar(f);
                                             }
 									    } else {
-										    callback.receiveErrorcalularPsMedia(f);
+										    callback.receiveErrorlistar(f);
 									    }
 									} else {
-									    callback.receiveErrorcalularPsMedia(f);
+									    callback.receiveErrorlistar(f);
 									}
 								} else {
-								    callback.receiveErrorcalularPsMedia(error);
+								    callback.receiveErrorlistar(error);
 								}
                             }
 
@@ -401,7 +392,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorcalularPsMedia(axisFault);
+                                    callback.receiveErrorlistar(axisFault);
                                 }
                             }
                 });
@@ -422,16 +413,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see br.com.fiap.ws.bo.FiapBO#calcularPs
-                     * @param calcularPs2
+                     * @see com.fiap.loja.bo.EstoqueBO#consultarProduto
+                     * @param consultarProduto2
                     
                      */
 
                     
 
-                            public  br.com.fiap.ws.bo.FiapBOStub.CalcularPsResponse calcularPs(
+                            public  com.fiap.loja.bo.EstoqueBOStub.ConsultarProdutoResponse consultarProduto(
 
-                            br.com.fiap.ws.bo.FiapBOStub.CalcularPs calcularPs2)
+                            com.fiap.loja.bo.EstoqueBOStub.ConsultarProduto consultarProduto2)
                         
 
                     throws java.rmi.RemoteException
@@ -440,7 +431,7 @@
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
                org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[1].getName());
-              _operationClient.getOptions().setAction("urn:calcularPs");
+              _operationClient.getOptions().setAction("urn:consultarProduto");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
               
@@ -458,10 +449,10 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    calcularPs2,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calcularPs")), new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calcularPs"));
+                                                    consultarProduto2,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                    "consultarProduto")), new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                    "consultarProduto"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -482,25 +473,25 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             br.com.fiap.ws.bo.FiapBOStub.CalcularPsResponse.class,
+                                             com.fiap.loja.bo.EstoqueBOStub.ConsultarProdutoResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (br.com.fiap.ws.bo.FiapBOStub.CalcularPsResponse)object;
+                                        return (com.fiap.loja.bo.EstoqueBOStub.ConsultarProdutoResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularPs"))){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"consultarProduto"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularPs"));
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"consultarProduto"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
                         java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
                         java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularPs"));
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"consultarProduto"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -544,20 +535,20 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see br.com.fiap.ws.bo.FiapBO#startcalcularPs
-                    * @param calcularPs2
+                * @see com.fiap.loja.bo.EstoqueBO#startconsultarProduto
+                    * @param consultarProduto2
                 
                 */
-                public  void startcalcularPs(
+                public  void startconsultarProduto(
 
-                 br.com.fiap.ws.bo.FiapBOStub.CalcularPs calcularPs2,
+                 com.fiap.loja.bo.EstoqueBOStub.ConsultarProduto consultarProduto2,
 
-                  final br.com.fiap.ws.bo.FiapBOCallbackHandler callback)
+                  final com.fiap.loja.bo.EstoqueBOCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[1].getName());
-             _operationClient.getOptions().setAction("urn:calcularPs");
+             _operationClient.getOptions().setAction("urn:consultarProduto");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
               
@@ -575,10 +566,10 @@
                                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    calcularPs2,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calcularPs")), new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calcularPs"));
+                                                    consultarProduto2,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                    "consultarProduto")), new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                    "consultarProduto"));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -596,13 +587,13 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         br.com.fiap.ws.bo.FiapBOStub.CalcularPsResponse.class,
+                                                                         com.fiap.loja.bo.EstoqueBOStub.ConsultarProdutoResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultcalcularPs(
-                                        (br.com.fiap.ws.bo.FiapBOStub.CalcularPsResponse)object);
+                                        callback.receiveResultconsultarProduto(
+                                        (com.fiap.loja.bo.EstoqueBOStub.ConsultarProdutoResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorcalcularPs(e);
+                                callback.receiveErrorconsultarProduto(e);
                             }
                             }
 
@@ -611,15 +602,15 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularPs"))){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"consultarProduto"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularPs"));
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"consultarProduto"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
 													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
                                                     java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularPs"));
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"consultarProduto"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -627,37 +618,37 @@
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
 					
-										            callback.receiveErrorcalcularPs(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorconsultarProduto(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularPs(f);
+                                                callback.receiveErrorconsultarProduto(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularPs(f);
+                                                callback.receiveErrorconsultarProduto(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularPs(f);
+                                                callback.receiveErrorconsultarProduto(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularPs(f);
+                                                callback.receiveErrorconsultarProduto(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularPs(f);
+                                                callback.receiveErrorconsultarProduto(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularPs(f);
+                                                callback.receiveErrorconsultarProduto(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularPs(f);
+                                                callback.receiveErrorconsultarProduto(f);
                                             }
 									    } else {
-										    callback.receiveErrorcalcularPs(f);
+										    callback.receiveErrorconsultarProduto(f);
 									    }
 									} else {
-									    callback.receiveErrorcalcularPs(f);
+									    callback.receiveErrorconsultarProduto(f);
 									}
 								} else {
-								    callback.receiveErrorcalcularPs(error);
+								    callback.receiveErrorconsultarProduto(error);
 								}
                             }
 
@@ -670,7 +661,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorcalcularPs(axisFault);
+                                    callback.receiveErrorconsultarProduto(axisFault);
                                 }
                             }
                 });
@@ -680,275 +671,6 @@
         if ( _operations[1].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
           _operations[1].setMessageReceiver(
-                    _callbackReceiver);
-        }
-
-           //execute the operation client
-           _operationClient.execute(false);
-
-                    }
-                
-                    /**
-                     * Auto generated method signature
-                     * 
-                     * @see br.com.fiap.ws.bo.FiapBO#calcularMedia
-                     * @param calcularMedia4
-                    
-                     */
-
-                    
-
-                            public  br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse calcularMedia(
-
-                            br.com.fiap.ws.bo.FiapBOStub.CalcularMedia calcularMedia4)
-                        
-
-                    throws java.rmi.RemoteException
-                    
-                    {
-              org.apache.axis2.context.MessageContext _messageContext = null;
-              try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[2].getName());
-              _operationClient.getOptions().setAction("urn:calcularMedia");
-              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
-
-              
-              
-                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
-              
-
-              // create a message context
-              _messageContext = new org.apache.axis2.context.MessageContext();
-
-              
-
-              // create SOAP envelope with that payload
-              org.apache.axiom.soap.SOAPEnvelope env = null;
-                    
-                                                    
-                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    calcularMedia4,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calcularMedia")), new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calcularMedia"));
-                                                
-        //adding SOAP soap_headers
-         _serviceClient.addHeadersToEnvelope(env);
-        // set the message context with that soap envelope
-        _messageContext.setEnvelope(env);
-
-        // add the message contxt to the operation client
-        _operationClient.addMessageContext(_messageContext);
-
-        //execute the operation client
-        _operationClient.execute(true);
-
-         
-               org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(
-                                           org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
-                org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
-                
-                
-                                java.lang.Object object = fromOM(
-                                             _returnEnv.getBody().getFirstElement() ,
-                                             br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse.class,
-                                              getEnvelopeNamespaces(_returnEnv));
-
-                               
-                                        return (br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse)object;
-                                   
-         }catch(org.apache.axis2.AxisFault f){
-
-            org.apache.axiom.om.OMElement faultElt = f.getDetail();
-            if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularMedia"))){
-                    //make the fault by reflection
-                    try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularMedia"));
-                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
-                        java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
-                        //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularMedia"));
-                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
-                        java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
-                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                   new java.lang.Class[]{messageClass});
-                        m.invoke(ex,new java.lang.Object[]{messageObject});
-                        
-
-                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }catch(java.lang.ClassCastException e){
-                       // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }catch (java.lang.NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.reflect.InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }  catch (java.lang.IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }   catch (java.lang.InstantiationException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }
-                }else{
-                    throw f;
-                }
-            }else{
-                throw f;
-            }
-            } finally {
-                if (_messageContext.getTransportOut() != null) {
-                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-            }
-        }
-            
-                /**
-                * Auto generated method signature for Asynchronous Invocations
-                * 
-                * @see br.com.fiap.ws.bo.FiapBO#startcalcularMedia
-                    * @param calcularMedia4
-                
-                */
-                public  void startcalcularMedia(
-
-                 br.com.fiap.ws.bo.FiapBOStub.CalcularMedia calcularMedia4,
-
-                  final br.com.fiap.ws.bo.FiapBOCallbackHandler callback)
-
-                throws java.rmi.RemoteException{
-
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[2].getName());
-             _operationClient.getOptions().setAction("urn:calcularMedia");
-             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
-
-              
-              
-                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
-              
-
-
-              // create SOAP envelope with that payload
-              org.apache.axiom.soap.SOAPEnvelope env=null;
-              final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
-
-                    
-                                    //Style is Doc.
-                                    
-                                                    
-                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    calcularMedia4,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calcularMedia")), new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                    "calcularMedia"));
-                                                
-        // adding SOAP soap_headers
-         _serviceClient.addHeadersToEnvelope(env);
-        // create message context with that soap envelope
-        _messageContext.setEnvelope(env);
-
-        // add the message context to the operation client
-        _operationClient.addMessageContext(_messageContext);
-
-
-                    
-                        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
-                            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
-                            try {
-                                org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
-                                
-                                        java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse.class,
-                                                                         getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultcalcularMedia(
-                                        (br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse)object);
-                                        
-                            } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorcalcularMedia(e);
-                            }
-                            }
-
-                            public void onError(java.lang.Exception error) {
-								if (error instanceof org.apache.axis2.AxisFault) {
-									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
-									org.apache.axiom.om.OMElement faultElt = f.getDetail();
-									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularMedia"))){
-											//make the fault by reflection
-											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularMedia"));
-													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
-                                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
-													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"calcularMedia"));
-														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
-													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
-													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-															new java.lang.Class[]{messageClass});
-													m.invoke(ex,new java.lang.Object[]{messageObject});
-													
-					
-										            callback.receiveErrorcalcularMedia(new java.rmi.RemoteException(ex.getMessage(), ex));
-                                            } catch(java.lang.ClassCastException e){
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularMedia(f);
-                                            } catch (java.lang.ClassNotFoundException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularMedia(f);
-                                            } catch (java.lang.NoSuchMethodException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularMedia(f);
-                                            } catch (java.lang.reflect.InvocationTargetException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularMedia(f);
-                                            } catch (java.lang.IllegalAccessException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularMedia(f);
-                                            } catch (java.lang.InstantiationException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularMedia(f);
-                                            } catch (org.apache.axis2.AxisFault e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorcalcularMedia(f);
-                                            }
-									    } else {
-										    callback.receiveErrorcalcularMedia(f);
-									    }
-									} else {
-									    callback.receiveErrorcalcularMedia(f);
-									}
-								} else {
-								    callback.receiveErrorcalcularMedia(error);
-								}
-                            }
-
-                            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
-                                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
-                                onError(fault);
-                            }
-
-                            public void onComplete() {
-                                try {
-                                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                                } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorcalcularMedia(axisFault);
-                                }
-                            }
-                });
-                        
-
-          org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[2].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
-           _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[2].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -988,1073 +710,7 @@
         }
         return false;
     }
-     //http://localhost:8080/04-WS-Soap-Provider/services/FiapBO.FiapBOHttpSoap11Endpoint/
-        public static class CalcularPsResponse
-        implements org.apache.axis2.databinding.ADBBean{
-        
-                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://bo.ws.fiap.com.br",
-                "calcularPsResponse",
-                "ns1");
-
-            
-
-                        /**
-                        * field for _return
-                        */
-
-                        
-                                    protected float local_return ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean local_returnTracker = false ;
-
-                           public boolean is_returnSpecified(){
-                               return local_returnTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return float
-                           */
-                           public  float get_return(){
-                               return local_return;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param _return
-                               */
-                               public void set_return(float param){
-                            
-                                       // setting primitive attribute tracker to true
-                                       local_returnTracker =
-                                       !java.lang.Float.isNaN(param);
-                                   
-                                            this.local_return=param;
-                                    
-
-                               }
-                            
-
-     
-     
-        /**
-        *
-        * @param parentQName
-        * @param factory
-        * @return org.apache.axiom.om.OMElement
-        */
-       public org.apache.axiom.om.OMElement getOMElement (
-               final javax.xml.namespace.QName parentQName,
-               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
-
-
-        
-               org.apache.axiom.om.OMDataSource dataSource =
-                       new org.apache.axis2.databinding.ADBDataSource(this,MY_QNAME);
-               return factory.createOMElement(dataSource,MY_QNAME);
-            
-        }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter)
-                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-                           serialize(parentQName,xmlWriter,false);
-         }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                               javax.xml.stream.XMLStreamWriter xmlWriter,
-                               boolean serializeType)
-            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-            
-                
-
-
-                java.lang.String prefix = null;
-                java.lang.String namespace = null;
-                
-
-                    prefix = parentQName.getPrefix();
-                    namespace = parentQName.getNamespaceURI();
-                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
-                
-                  if (serializeType){
-               
-
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://bo.ws.fiap.com.br");
-                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":calcularPsResponse",
-                           xmlWriter);
-                   } else {
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "calcularPsResponse",
-                           xmlWriter);
-                   }
-
-               
-                   }
-                if (local_returnTracker){
-                                    namespace = "http://bo.ws.fiap.com.br";
-                                    writeStartElement(null, namespace, "return", xmlWriter);
-                             
-                                               if (java.lang.Float.isNaN(local_return)) {
-                                           
-                                                         throw new org.apache.axis2.databinding.ADBException("return cannot be null!!");
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(local_return));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                             }
-                    xmlWriter.writeEndElement();
-               
-
-        }
-
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://bo.ws.fiap.com.br")){
-                return "ns1";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
-
-        /**
-         * Utility method to write an element start tag.
-         */
-        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-            if (writerPrefix != null) {
-                xmlWriter.writeStartElement(namespace, localPart);
-            } else {
-                if (namespace.length() == 0) {
-                    prefix = "";
-                } else if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-                }
-
-                xmlWriter.writeStartElement(prefix, localPart, namespace);
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-        }
-        
-        /**
-         * Util method to write an attribute with the ns prefix
-         */
-        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (xmlWriter.getPrefix(namespace) == null) {
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            xmlWriter.writeAttribute(namespace,attName,attValue);
-        }
-
-        /**
-         * Util method to write an attribute without the ns prefix
-         */
-        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (namespace.equals("")) {
-                xmlWriter.writeAttribute(attName,attValue);
-            } else {
-                registerPrefix(xmlWriter, namespace);
-                xmlWriter.writeAttribute(namespace,attName,attValue);
-            }
-        }
-
-
-           /**
-             * Util method to write an attribute without the ns prefix
-             */
-            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
-                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-                java.lang.String attributeNamespace = qname.getNamespaceURI();
-                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
-                if (attributePrefix == null) {
-                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
-                }
-                java.lang.String attributeValue;
-                if (attributePrefix.trim().length() > 0) {
-                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
-                } else {
-                    attributeValue = qname.getLocalPart();
-                }
-
-                if (namespace.equals("")) {
-                    xmlWriter.writeAttribute(attName, attributeValue);
-                } else {
-                    registerPrefix(xmlWriter, namespace);
-                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
-                }
-            }
-        /**
-         *  method to handle Qnames
-         */
-
-        private void writeQName(javax.xml.namespace.QName qname,
-                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String namespaceURI = qname.getNamespaceURI();
-            if (namespaceURI != null) {
-                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
-                if (prefix == null) {
-                    prefix = generatePrefix(namespaceURI);
-                    xmlWriter.writeNamespace(prefix, namespaceURI);
-                    xmlWriter.setPrefix(prefix,namespaceURI);
-                }
-
-                if (prefix.trim().length() > 0){
-                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                } else {
-                    // i.e this is the default namespace
-                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                }
-
-            } else {
-                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-        }
-
-        private void writeQNames(javax.xml.namespace.QName[] qnames,
-                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-            if (qnames != null) {
-                // we have to store this data until last moment since it is not possible to write any
-                // namespace data after writing the charactor data
-                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
-                java.lang.String namespaceURI = null;
-                java.lang.String prefix = null;
-
-                for (int i = 0; i < qnames.length; i++) {
-                    if (i > 0) {
-                        stringToWrite.append(" ");
-                    }
-                    namespaceURI = qnames[i].getNamespaceURI();
-                    if (namespaceURI != null) {
-                        prefix = xmlWriter.getPrefix(namespaceURI);
-                        if ((prefix == null) || (prefix.length() == 0)) {
-                            prefix = generatePrefix(namespaceURI);
-                            xmlWriter.writeNamespace(prefix, namespaceURI);
-                            xmlWriter.setPrefix(prefix,namespaceURI);
-                        }
-
-                        if (prefix.trim().length() > 0){
-                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        } else {
-                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        }
-                    } else {
-                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                }
-                xmlWriter.writeCharacters(stringToWrite.toString());
-            }
-
-        }
-
-
-        /**
-         * Register a namespace prefix
-         */
-        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
-            java.lang.String prefix = xmlWriter.getPrefix(namespace);
-            if (prefix == null) {
-                prefix = generatePrefix(namespace);
-                javax.xml.namespace.NamespaceContext nsContext = xmlWriter.getNamespaceContext();
-                while (true) {
-                    java.lang.String uri = nsContext.getNamespaceURI(prefix);
-                    if (uri == null || uri.length() == 0) {
-                        break;
-                    }
-                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-                }
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            return prefix;
-        }
-
-
-  
-        /**
-        * databinding method to get an XML representation of this object
-        *
-        */
-        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
-                    throws org.apache.axis2.databinding.ADBException{
-
-
-        
-                 java.util.ArrayList elementList = new java.util.ArrayList();
-                 java.util.ArrayList attribList = new java.util.ArrayList();
-
-                 if (local_returnTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                                      "return"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(local_return));
-                            }
-
-                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
-            
-            
-
-        }
-
-  
-
-     /**
-      *  Factory class that keeps the parse method
-      */
-    public static class Factory{
-
-        
-        
-
-        /**
-        * static method to create the object
-        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
-        * Postcondition: If this object is an element, the reader is positioned at its end element
-        *                If this object is a complex type, the reader is positioned at the end element of its outer element
-        */
-        public static CalcularPsResponse parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            CalcularPsResponse object =
-                new CalcularPsResponse();
-
-            int event;
-            java.lang.String nillableValue = null;
-            java.lang.String prefix ="";
-            java.lang.String namespaceuri ="";
-            try {
-                
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                
-                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
-                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                        "type");
-                  if (fullTypeName!=null){
-                    java.lang.String nsPrefix = null;
-                    if (fullTypeName.indexOf(":") > -1){
-                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
-                    }
-                    nsPrefix = nsPrefix==null?"":nsPrefix;
-
-                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
-                    
-                            if (!"calcularPsResponse".equals(type)){
-                                //find namespace for the prefix
-                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (CalcularPsResponse)ExtensionMapper.getTypeObject(
-                                     nsUri,type,reader);
-                              }
-                        
-
-                  }
-                
-
-                }
-
-                
-
-                
-                // Note all attributes that were handled. Used to differ normal attributes
-                // from anyAttributes.
-                java.util.Vector handledAttributes = new java.util.Vector();
-                
-
-                
-                    
-                    reader.next();
-                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.ws.fiap.com.br","return").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"return" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.set_return(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                               object.set_return(java.lang.Float.NaN);
-                                           
-                                    }
-                                  
-                            while (!reader.isStartElement() && !reader.isEndElement())
-                                reader.next();
-                            
-                                if (reader.isStartElement())
-                                // A start element we are not expecting indicates a trailing invalid property
-                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                            
-
-
-
-            } catch (javax.xml.stream.XMLStreamException e) {
-                throw new java.lang.Exception(e);
-            }
-
-            return object;
-        }
-
-        }//end of factory class
-
-        
-
-        }
-           
-    
-        public static class CalularPsMedia
-        implements org.apache.axis2.databinding.ADBBean{
-        
-                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://bo.ws.fiap.com.br",
-                "calularPsMedia",
-                "ns1");
-
-            
-
-                        /**
-                        * field for Nac
-                        */
-
-                        
-                                    protected float localNac ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localNacTracker = false ;
-
-                           public boolean isNacSpecified(){
-                               return localNacTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return float
-                           */
-                           public  float getNac(){
-                               return localNac;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Nac
-                               */
-                               public void setNac(float param){
-                            
-                                       // setting primitive attribute tracker to true
-                                       localNacTracker =
-                                       !java.lang.Float.isNaN(param);
-                                   
-                                            this.localNac=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Am
-                        */
-
-                        
-                                    protected float localAm ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localAmTracker = false ;
-
-                           public boolean isAmSpecified(){
-                               return localAmTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return float
-                           */
-                           public  float getAm(){
-                               return localAm;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Am
-                               */
-                               public void setAm(float param){
-                            
-                                       // setting primitive attribute tracker to true
-                                       localAmTracker =
-                                       !java.lang.Float.isNaN(param);
-                                   
-                                            this.localAm=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for MediaEsperada
-                        */
-
-                        
-                                    protected float localMediaEsperada ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localMediaEsperadaTracker = false ;
-
-                           public boolean isMediaEsperadaSpecified(){
-                               return localMediaEsperadaTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return float
-                           */
-                           public  float getMediaEsperada(){
-                               return localMediaEsperada;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param MediaEsperada
-                               */
-                               public void setMediaEsperada(float param){
-                            
-                                       // setting primitive attribute tracker to true
-                                       localMediaEsperadaTracker =
-                                       !java.lang.Float.isNaN(param);
-                                   
-                                            this.localMediaEsperada=param;
-                                    
-
-                               }
-                            
-
-     
-     
-        /**
-        *
-        * @param parentQName
-        * @param factory
-        * @return org.apache.axiom.om.OMElement
-        */
-       public org.apache.axiom.om.OMElement getOMElement (
-               final javax.xml.namespace.QName parentQName,
-               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
-
-
-        
-               org.apache.axiom.om.OMDataSource dataSource =
-                       new org.apache.axis2.databinding.ADBDataSource(this,MY_QNAME);
-               return factory.createOMElement(dataSource,MY_QNAME);
-            
-        }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter)
-                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-                           serialize(parentQName,xmlWriter,false);
-         }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                               javax.xml.stream.XMLStreamWriter xmlWriter,
-                               boolean serializeType)
-            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-            
-                
-
-
-                java.lang.String prefix = null;
-                java.lang.String namespace = null;
-                
-
-                    prefix = parentQName.getPrefix();
-                    namespace = parentQName.getNamespaceURI();
-                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
-                
-                  if (serializeType){
-               
-
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://bo.ws.fiap.com.br");
-                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":calularPsMedia",
-                           xmlWriter);
-                   } else {
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "calularPsMedia",
-                           xmlWriter);
-                   }
-
-               
-                   }
-                if (localNacTracker){
-                                    namespace = "http://bo.ws.fiap.com.br";
-                                    writeStartElement(null, namespace, "nac", xmlWriter);
-                             
-                                               if (java.lang.Float.isNaN(localNac)) {
-                                           
-                                                         throw new org.apache.axis2.databinding.ADBException("nac cannot be null!!");
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNac));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localAmTracker){
-                                    namespace = "http://bo.ws.fiap.com.br";
-                                    writeStartElement(null, namespace, "am", xmlWriter);
-                             
-                                               if (java.lang.Float.isNaN(localAm)) {
-                                           
-                                                         throw new org.apache.axis2.databinding.ADBException("am cannot be null!!");
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAm));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localMediaEsperadaTracker){
-                                    namespace = "http://bo.ws.fiap.com.br";
-                                    writeStartElement(null, namespace, "mediaEsperada", xmlWriter);
-                             
-                                               if (java.lang.Float.isNaN(localMediaEsperada)) {
-                                           
-                                                         throw new org.apache.axis2.databinding.ADBException("mediaEsperada cannot be null!!");
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localMediaEsperada));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                             }
-                    xmlWriter.writeEndElement();
-               
-
-        }
-
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://bo.ws.fiap.com.br")){
-                return "ns1";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
-
-        /**
-         * Utility method to write an element start tag.
-         */
-        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-            if (writerPrefix != null) {
-                xmlWriter.writeStartElement(namespace, localPart);
-            } else {
-                if (namespace.length() == 0) {
-                    prefix = "";
-                } else if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-                }
-
-                xmlWriter.writeStartElement(prefix, localPart, namespace);
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-        }
-        
-        /**
-         * Util method to write an attribute with the ns prefix
-         */
-        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (xmlWriter.getPrefix(namespace) == null) {
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            xmlWriter.writeAttribute(namespace,attName,attValue);
-        }
-
-        /**
-         * Util method to write an attribute without the ns prefix
-         */
-        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (namespace.equals("")) {
-                xmlWriter.writeAttribute(attName,attValue);
-            } else {
-                registerPrefix(xmlWriter, namespace);
-                xmlWriter.writeAttribute(namespace,attName,attValue);
-            }
-        }
-
-
-           /**
-             * Util method to write an attribute without the ns prefix
-             */
-            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
-                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-                java.lang.String attributeNamespace = qname.getNamespaceURI();
-                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
-                if (attributePrefix == null) {
-                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
-                }
-                java.lang.String attributeValue;
-                if (attributePrefix.trim().length() > 0) {
-                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
-                } else {
-                    attributeValue = qname.getLocalPart();
-                }
-
-                if (namespace.equals("")) {
-                    xmlWriter.writeAttribute(attName, attributeValue);
-                } else {
-                    registerPrefix(xmlWriter, namespace);
-                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
-                }
-            }
-        /**
-         *  method to handle Qnames
-         */
-
-        private void writeQName(javax.xml.namespace.QName qname,
-                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String namespaceURI = qname.getNamespaceURI();
-            if (namespaceURI != null) {
-                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
-                if (prefix == null) {
-                    prefix = generatePrefix(namespaceURI);
-                    xmlWriter.writeNamespace(prefix, namespaceURI);
-                    xmlWriter.setPrefix(prefix,namespaceURI);
-                }
-
-                if (prefix.trim().length() > 0){
-                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                } else {
-                    // i.e this is the default namespace
-                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                }
-
-            } else {
-                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-        }
-
-        private void writeQNames(javax.xml.namespace.QName[] qnames,
-                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-            if (qnames != null) {
-                // we have to store this data until last moment since it is not possible to write any
-                // namespace data after writing the charactor data
-                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
-                java.lang.String namespaceURI = null;
-                java.lang.String prefix = null;
-
-                for (int i = 0; i < qnames.length; i++) {
-                    if (i > 0) {
-                        stringToWrite.append(" ");
-                    }
-                    namespaceURI = qnames[i].getNamespaceURI();
-                    if (namespaceURI != null) {
-                        prefix = xmlWriter.getPrefix(namespaceURI);
-                        if ((prefix == null) || (prefix.length() == 0)) {
-                            prefix = generatePrefix(namespaceURI);
-                            xmlWriter.writeNamespace(prefix, namespaceURI);
-                            xmlWriter.setPrefix(prefix,namespaceURI);
-                        }
-
-                        if (prefix.trim().length() > 0){
-                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        } else {
-                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        }
-                    } else {
-                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                }
-                xmlWriter.writeCharacters(stringToWrite.toString());
-            }
-
-        }
-
-
-        /**
-         * Register a namespace prefix
-         */
-        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
-            java.lang.String prefix = xmlWriter.getPrefix(namespace);
-            if (prefix == null) {
-                prefix = generatePrefix(namespace);
-                javax.xml.namespace.NamespaceContext nsContext = xmlWriter.getNamespaceContext();
-                while (true) {
-                    java.lang.String uri = nsContext.getNamespaceURI(prefix);
-                    if (uri == null || uri.length() == 0) {
-                        break;
-                    }
-                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-                }
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            return prefix;
-        }
-
-
-  
-        /**
-        * databinding method to get an XML representation of this object
-        *
-        */
-        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
-                    throws org.apache.axis2.databinding.ADBException{
-
-
-        
-                 java.util.ArrayList elementList = new java.util.ArrayList();
-                 java.util.ArrayList attribList = new java.util.ArrayList();
-
-                 if (localNacTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                                      "nac"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNac));
-                            } if (localAmTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                                      "am"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAm));
-                            } if (localMediaEsperadaTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                                      "mediaEsperada"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localMediaEsperada));
-                            }
-
-                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
-            
-            
-
-        }
-
-  
-
-     /**
-      *  Factory class that keeps the parse method
-      */
-    public static class Factory{
-
-        
-        
-
-        /**
-        * static method to create the object
-        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
-        * Postcondition: If this object is an element, the reader is positioned at its end element
-        *                If this object is a complex type, the reader is positioned at the end element of its outer element
-        */
-        public static CalularPsMedia parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            CalularPsMedia object =
-                new CalularPsMedia();
-
-            int event;
-            java.lang.String nillableValue = null;
-            java.lang.String prefix ="";
-            java.lang.String namespaceuri ="";
-            try {
-                
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                
-                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
-                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                        "type");
-                  if (fullTypeName!=null){
-                    java.lang.String nsPrefix = null;
-                    if (fullTypeName.indexOf(":") > -1){
-                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
-                    }
-                    nsPrefix = nsPrefix==null?"":nsPrefix;
-
-                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
-                    
-                            if (!"calularPsMedia".equals(type)){
-                                //find namespace for the prefix
-                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (CalularPsMedia)ExtensionMapper.getTypeObject(
-                                     nsUri,type,reader);
-                              }
-                        
-
-                  }
-                
-
-                }
-
-                
-
-                
-                // Note all attributes that were handled. Used to differ normal attributes
-                // from anyAttributes.
-                java.util.Vector handledAttributes = new java.util.Vector();
-                
-
-                
-                    
-                    reader.next();
-                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.ws.fiap.com.br","nac").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"nac" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setNac(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                               object.setNac(java.lang.Float.NaN);
-                                           
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.ws.fiap.com.br","am").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"am" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setAm(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                               object.setAm(java.lang.Float.NaN);
-                                           
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.ws.fiap.com.br","mediaEsperada").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"mediaEsperada" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setMediaEsperada(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                               object.setMediaEsperada(java.lang.Float.NaN);
-                                           
-                                    }
-                                  
-                            while (!reader.isStartElement() && !reader.isEndElement())
-                                reader.next();
-                            
-                                if (reader.isStartElement())
-                                // A start element we are not expecting indicates a trailing invalid property
-                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                            
-
-
-
-            } catch (javax.xml.stream.XMLStreamException e) {
-                throw new java.lang.Exception(e);
-            }
-
-            return object;
-        }
-
-        }//end of factory class
-
-        
-
-        }
-           
-    
+     //http://localhost:8080/05-WS-Estoque/services/EstoqueBO.EstoqueBOHttpSoap12Endpoint/
         public static class ExtensionMapper{
 
           public static java.lang.Object getTypeObject(java.lang.String namespaceURI,
@@ -2062,110 +718,30 @@
                                                        javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
 
               
+                  if (
+                  "http://bean.loja.fiap.com/xsd".equals(namespaceURI) &&
+                  "ProdutoTO".equals(typeName)){
+                   
+                            return  ProdutoTO.Factory.parse(reader);
+                        
+
+                  }
+
+              
              throw new org.apache.axis2.databinding.ADBException("Unsupported type " + namespaceURI + " " + typeName);
           }
 
         }
     
-        public static class CalcularPs
+        public static class Listar
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://bo.ws.fiap.com.br",
-                "calcularPs",
-                "ns1");
+                "http://bo.loja.fiap.com",
+                "listar",
+                "ns3");
 
             
-
-                        /**
-                        * field for Nac
-                        */
-
-                        
-                                    protected float localNac ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localNacTracker = false ;
-
-                           public boolean isNacSpecified(){
-                               return localNacTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return float
-                           */
-                           public  float getNac(){
-                               return localNac;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Nac
-                               */
-                               public void setNac(float param){
-                            
-                                       // setting primitive attribute tracker to true
-                                       localNacTracker =
-                                       !java.lang.Float.isNaN(param);
-                                   
-                                            this.localNac=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Am
-                        */
-
-                        
-                                    protected float localAm ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localAmTracker = false ;
-
-                           public boolean isAmSpecified(){
-                               return localAmTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return float
-                           */
-                           public  float getAm(){
-                               return localAm;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Am
-                               */
-                               public void setAm(float param){
-                            
-                                       // setting primitive attribute tracker to true
-                                       localAmTracker =
-                                       !java.lang.Float.isNaN(param);
-                                   
-                                            this.localAm=param;
-                                    
-
-                               }
-                            
 
      
      
@@ -2212,54 +788,28 @@
                   if (serializeType){
                
 
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://bo.ws.fiap.com.br");
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://bo.loja.fiap.com");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":calcularPs",
+                           namespacePrefix+":listar",
                            xmlWriter);
                    } else {
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "calcularPs",
+                           "listar",
                            xmlWriter);
                    }
 
                
                    }
-                if (localNacTracker){
-                                    namespace = "http://bo.ws.fiap.com.br";
-                                    writeStartElement(null, namespace, "nac", xmlWriter);
-                             
-                                               if (java.lang.Float.isNaN(localNac)) {
-                                           
-                                                         throw new org.apache.axis2.databinding.ADBException("nac cannot be null!!");
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNac));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localAmTracker){
-                                    namespace = "http://bo.ws.fiap.com.br";
-                                    writeStartElement(null, namespace, "am", xmlWriter);
-                             
-                                               if (java.lang.Float.isNaN(localAm)) {
-                                           
-                                                         throw new org.apache.axis2.databinding.ADBException("am cannot be null!!");
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAm));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                             }
+               
                     xmlWriter.writeEndElement();
                
 
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://bo.ws.fiap.com.br")){
-                return "ns1";
+            if(namespace.equals("http://bo.loja.fiap.com")){
+                return "ns3";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -2436,19 +986,7 @@
                  java.util.ArrayList elementList = new java.util.ArrayList();
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
-                 if (localNacTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                                      "nac"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNac));
-                            } if (localAmTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                                      "am"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAm));
-                            }
+                
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -2473,9 +1011,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static CalcularPs parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            CalcularPs object =
-                new CalcularPs();
+        public static Listar parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            Listar object =
+                new Listar();
 
             int event;
             java.lang.String nillableValue = null;
@@ -2499,10 +1037,10 @@
 
                     java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
                     
-                            if (!"calcularPs".equals(type)){
+                            if (!"listar".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (CalcularPs)ExtensionMapper.getTypeObject(
+                                return (Listar)ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -2523,59 +1061,7 @@
                 
                     
                     reader.next();
-                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.ws.fiap.com.br","nac").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"nac" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setNac(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                               object.setNac(java.lang.Float.NaN);
-                                           
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.ws.fiap.com.br","am").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"am" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setAm(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                               object.setAm(java.lang.Float.NaN);
-                                           
-                                    }
-                                  
+                  
                             while (!reader.isStartElement() && !reader.isEndElement())
                                 reader.next();
                             
@@ -2600,22 +1086,23 @@
         }
            
     
-        public static class CalcularMediaResponse
+        public static class ListarResponse
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://bo.ws.fiap.com.br",
-                "calcularMediaResponse",
-                "ns1");
+                "http://bo.loja.fiap.com",
+                "listarResponse",
+                "ns3");
 
             
 
                         /**
                         * field for _return
+                        * This was an Array!
                         */
 
                         
-                                    protected float local_return ;
+                                    protected ProdutoTO[] local_return ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
@@ -2631,29 +1118,63 @@
 
                            /**
                            * Auto generated getter method
-                           * @return float
+                           * @return ProdutoTO[]
                            */
-                           public  float get_return(){
+                           public  ProdutoTO[] get_return(){
                                return local_return;
                            }
 
                            
                         
-                            /**
-                               * Auto generated setter method
-                               * @param param _return
-                               */
-                               public void set_return(float param){
-                            
-                                       // setting primitive attribute tracker to true
-                                       local_returnTracker =
-                                       !java.lang.Float.isNaN(param);
-                                   
-                                            this.local_return=param;
-                                    
 
-                               }
+
+                               
+                              /**
+                               * validate the array for _return
+                               */
+                              protected void validate_return(ProdutoTO[] param){
+                             
+                              }
+
+
+                             /**
+                              * Auto generated setter method
+                              * @param param _return
+                              */
+                              public void set_return(ProdutoTO[] param){
+                              
+                                   validate_return(param);
+
+                               local_returnTracker = true;
+                                      
+                                      this.local_return=param;
+                              }
+
+                               
+                             
+                             /**
+                             * Auto generated add method for the array for convenience
+                             * @param param ProdutoTO
+                             */
+                             public void add_return(ProdutoTO param){
+                                   if (local_return == null){
+                                   local_return = new ProdutoTO[]{};
+                                   }
+
                             
+                                 //update the setting tracker
+                                local_returnTracker = true;
+                            
+
+                               java.util.List list =
+                            org.apache.axis2.databinding.utils.ConverterUtil.toList(local_return);
+                               list.add(param);
+                               this.local_return =
+                             (ProdutoTO[])list.toArray(
+                            new ProdutoTO[list.size()]);
+
+                             }
+                             
 
      
      
@@ -2700,41 +1221,54 @@
                   if (serializeType){
                
 
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://bo.ws.fiap.com.br");
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://bo.loja.fiap.com");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":calcularMediaResponse",
+                           namespacePrefix+":listarResponse",
                            xmlWriter);
                    } else {
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "calcularMediaResponse",
+                           "listarResponse",
                            xmlWriter);
                    }
 
                
                    }
                 if (local_returnTracker){
-                                    namespace = "http://bo.ws.fiap.com.br";
-                                    writeStartElement(null, namespace, "return", xmlWriter);
-                             
-                                               if (java.lang.Float.isNaN(local_return)) {
-                                           
-                                                         throw new org.apache.axis2.databinding.ADBException("return cannot be null!!");
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(local_return));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                             }
+                                       if (local_return!=null){
+                                            for (int i = 0;i < local_return.length;i++){
+                                                if (local_return[i] != null){
+                                                 local_return[i].serialize(new javax.xml.namespace.QName("http://bo.loja.fiap.com","return"),
+                                                           xmlWriter);
+                                                } else {
+                                                   
+                                                            writeStartElement(null, "http://bo.loja.fiap.com", "return", xmlWriter);
+
+                                                           // write the nil attribute
+                                                           writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                           xmlWriter.writeEndElement();
+                                                    
+                                                }
+
+                                            }
+                                     } else {
+                                        
+                                                writeStartElement(null, "http://bo.loja.fiap.com", "return", xmlWriter);
+
+                                               // write the nil attribute
+                                               writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                               xmlWriter.writeEndElement();
+                                        
+                                    }
+                                 }
                     xmlWriter.writeEndElement();
                
 
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://bo.ws.fiap.com.br")){
-                return "ns1";
+            if(namespace.equals("http://bo.loja.fiap.com")){
+                return "ns3";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -2912,12 +1446,31 @@
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
                  if (local_returnTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                                      "return"));
+                             if (local_return!=null) {
+                                 for (int i = 0;i < local_return.length;i++){
+
+                                    if (local_return[i] != null){
+                                         elementList.add(new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                                          "return"));
+                                         elementList.add(local_return[i]);
+                                    } else {
+                                        
+                                                elementList.add(new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                                          "return"));
+                                                elementList.add(null);
+                                            
+                                    }
+
+                                 }
+                             } else {
                                  
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(local_return));
-                            }
+                                        elementList.add(new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                                          "return"));
+                                        elementList.add(local_return);
+                                    
+                             }
+
+                        }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -2942,9 +1495,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static CalcularMediaResponse parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            CalcularMediaResponse object =
-                new CalcularMediaResponse();
+        public static ListarResponse parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            ListarResponse object =
+                new ListarResponse();
 
             int event;
             java.lang.String nillableValue = null;
@@ -2968,10 +1521,10 @@
 
                     java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
                     
-                            if (!"calcularMediaResponse".equals(type)){
+                            if (!"listarResponse".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (CalcularMediaResponse)ExtensionMapper.getTypeObject(
+                                return (ListarResponse)ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -2993,30 +1546,64 @@
                     
                     reader.next();
                 
+                        java.util.ArrayList list1 = new java.util.ArrayList();
+                    
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.ws.fiap.com.br","return").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.loja.fiap.com","return").equals(reader.getName())){
                                 
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"return" +"  cannot be null");
-                                    }
                                     
-
-                                    java.lang.String content = reader.getElementText();
                                     
-                                              object.set_return(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
-                                              
-                                        reader.next();
+                                    // Process the array and step past its final element's end.
                                     
+                                                          nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                                          if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                                              list1.add(null);
+                                                              reader.next();
+                                                          } else {
+                                                        list1.add(ProdutoTO.Factory.parse(reader));
+                                                                }
+                                                        //loop until we find a start element that is not part of this array
+                                                        boolean loopDone1 = false;
+                                                        while(!loopDone1){
+                                                            // We should be at the end element, but make sure
+                                                            while (!reader.isEndElement())
+                                                                reader.next();
+                                                            // Step out of this element
+                                                            reader.next();
+                                                            // Step to next element event.
+                                                            while (!reader.isStartElement() && !reader.isEndElement())
+                                                                reader.next();
+                                                            if (reader.isEndElement()){
+                                                                //two continuous end elements means we are exiting the xml structure
+                                                                loopDone1 = true;
+                                                            } else {
+                                                                if (new javax.xml.namespace.QName("http://bo.loja.fiap.com","return").equals(reader.getName())){
+                                                                    
+                                                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                                                          list1.add(null);
+                                                                          reader.next();
+                                                                      } else {
+                                                                    list1.add(ProdutoTO.Factory.parse(reader));
+                                                                        }
+                                                                }else{
+                                                                    loopDone1 = true;
+                                                                }
+                                                            }
+                                                        }
+                                                        // call the converter utility  to convert and set the array
+                                                        
+                                                        object.set_return((ProdutoTO[])
+                                                            org.apache.axis2.databinding.utils.ConverterUtil.convertToArray(
+                                                                ProdutoTO.class,
+                                                                list1));
+                                                            
                               }  // End of if for expected property start element
                                 
                                     else {
                                         
-                                               object.set_return(java.lang.Float.NaN);
-                                           
                                     }
                                   
                             while (!reader.isStartElement() && !reader.isEndElement())
@@ -3043,146 +1630,229 @@
         }
            
     
-        public static class CalcularMedia
+        public static class ProdutoTO
         implements org.apache.axis2.databinding.ADBBean{
-        
-                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://bo.ws.fiap.com.br",
-                "calcularMedia",
-                "ns1");
-
+        /* This type was generated from the piece of schema that had
+                name = ProdutoTO
+                Namespace URI = http://bean.loja.fiap.com/xsd
+                Namespace Prefix = ns2
+                */
             
 
                         /**
-                        * field for Nac
+                        * field for Codigo
                         */
 
                         
-                                    protected float localNac ;
+                                    protected int localCodigo ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
                            *   in the serialized XML
                            */
-                           protected boolean localNacTracker = false ;
+                           protected boolean localCodigoTracker = false ;
 
-                           public boolean isNacSpecified(){
-                               return localNacTracker;
+                           public boolean isCodigoSpecified(){
+                               return localCodigoTracker;
                            }
 
                            
 
                            /**
                            * Auto generated getter method
-                           * @return float
+                           * @return int
                            */
-                           public  float getNac(){
-                               return localNac;
+                           public  int getCodigo(){
+                               return localCodigo;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param Nac
+                               * @param param Codigo
                                */
-                               public void setNac(float param){
+                               public void setCodigo(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       localNacTracker =
-                                       !java.lang.Float.isNaN(param);
+                                       localCodigoTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
                                    
-                                            this.localNac=param;
+                                            this.localCodigo=param;
                                     
 
                                }
                             
 
                         /**
-                        * field for Am
+                        * field for Marca
                         */
 
                         
-                                    protected float localAm ;
+                                    protected java.lang.String localMarca ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
                            *   in the serialized XML
                            */
-                           protected boolean localAmTracker = false ;
+                           protected boolean localMarcaTracker = false ;
 
-                           public boolean isAmSpecified(){
-                               return localAmTracker;
+                           public boolean isMarcaSpecified(){
+                               return localMarcaTracker;
                            }
 
                            
 
                            /**
                            * Auto generated getter method
-                           * @return float
+                           * @return java.lang.String
                            */
-                           public  float getAm(){
-                               return localAm;
+                           public  java.lang.String getMarca(){
+                               return localMarca;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param Am
+                               * @param param Marca
                                */
-                               public void setAm(float param){
-                            
-                                       // setting primitive attribute tracker to true
-                                       localAmTracker =
-                                       !java.lang.Float.isNaN(param);
+                               public void setMarca(java.lang.String param){
+                            localMarcaTracker = true;
                                    
-                                            this.localAm=param;
+                                            this.localMarca=param;
                                     
 
                                }
                             
 
                         /**
-                        * field for Ps
+                        * field for Nome
                         */
 
                         
-                                    protected float localPs ;
+                                    protected java.lang.String localNome ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
                            *   in the serialized XML
                            */
-                           protected boolean localPsTracker = false ;
+                           protected boolean localNomeTracker = false ;
 
-                           public boolean isPsSpecified(){
-                               return localPsTracker;
+                           public boolean isNomeSpecified(){
+                               return localNomeTracker;
                            }
 
                            
 
                            /**
                            * Auto generated getter method
-                           * @return float
+                           * @return java.lang.String
                            */
-                           public  float getPs(){
-                               return localPs;
+                           public  java.lang.String getNome(){
+                               return localNome;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param Ps
+                               * @param param Nome
                                */
-                               public void setPs(float param){
+                               public void setNome(java.lang.String param){
+                            localNomeTracker = true;
+                                   
+                                            this.localNome=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Preco
+                        */
+
+                        
+                                    protected double localPreco ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localPrecoTracker = false ;
+
+                           public boolean isPrecoSpecified(){
+                               return localPrecoTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return double
+                           */
+                           public  double getPreco(){
+                               return localPreco;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Preco
+                               */
+                               public void setPreco(double param){
                             
                                        // setting primitive attribute tracker to true
-                                       localPsTracker =
-                                       !java.lang.Float.isNaN(param);
+                                       localPrecoTracker =
+                                       !java.lang.Double.isNaN(param);
                                    
-                                            this.localPs=param;
+                                            this.localPreco=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Quantidade
+                        */
+
+                        
+                                    protected int localQuantidade ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localQuantidadeTracker = false ;
+
+                           public boolean isQuantidadeSpecified(){
+                               return localQuantidadeTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getQuantidade(){
+                               return localQuantidade;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Quantidade
+                               */
+                               public void setQuantidade(int param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       localQuantidadeTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
+                                   
+                                            this.localQuantidade=param;
                                     
 
                                }
@@ -3203,8 +1873,8 @@
 
         
                org.apache.axiom.om.OMDataSource dataSource =
-                       new org.apache.axis2.databinding.ADBDataSource(this,MY_QNAME);
-               return factory.createOMElement(dataSource,MY_QNAME);
+                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
+               return factory.createOMElement(dataSource,parentQName);
             
         }
 
@@ -3233,55 +1903,91 @@
                   if (serializeType){
                
 
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://bo.ws.fiap.com.br");
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://bean.loja.fiap.com/xsd");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":calcularMedia",
+                           namespacePrefix+":ProdutoTO",
                            xmlWriter);
                    } else {
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "calcularMedia",
+                           "ProdutoTO",
                            xmlWriter);
                    }
 
                
                    }
-                if (localNacTracker){
-                                    namespace = "http://bo.ws.fiap.com.br";
-                                    writeStartElement(null, namespace, "nac", xmlWriter);
+                if (localCodigoTracker){
+                                    namespace = "http://bean.loja.fiap.com/xsd";
+                                    writeStartElement(null, namespace, "codigo", xmlWriter);
                              
-                                               if (java.lang.Float.isNaN(localNac)) {
+                                               if (localCodigo==java.lang.Integer.MIN_VALUE) {
                                            
-                                                         throw new org.apache.axis2.databinding.ADBException("nac cannot be null!!");
+                                                         throw new org.apache.axis2.databinding.ADBException("codigo cannot be null!!");
                                                       
                                                } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNac));
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCodigo));
                                                }
                                     
                                    xmlWriter.writeEndElement();
-                             } if (localAmTracker){
-                                    namespace = "http://bo.ws.fiap.com.br";
-                                    writeStartElement(null, namespace, "am", xmlWriter);
+                             } if (localMarcaTracker){
+                                    namespace = "http://bean.loja.fiap.com/xsd";
+                                    writeStartElement(null, namespace, "marca", xmlWriter);
                              
-                                               if (java.lang.Float.isNaN(localAm)) {
+
+                                          if (localMarca==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localMarca);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localNomeTracker){
+                                    namespace = "http://bean.loja.fiap.com/xsd";
+                                    writeStartElement(null, namespace, "nome", xmlWriter);
+                             
+
+                                          if (localNome==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localNome);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localPrecoTracker){
+                                    namespace = "http://bean.loja.fiap.com/xsd";
+                                    writeStartElement(null, namespace, "preco", xmlWriter);
+                             
+                                               if (java.lang.Double.isNaN(localPreco)) {
                                            
-                                                         throw new org.apache.axis2.databinding.ADBException("am cannot be null!!");
+                                                         throw new org.apache.axis2.databinding.ADBException("preco cannot be null!!");
                                                       
                                                } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAm));
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPreco));
                                                }
                                     
                                    xmlWriter.writeEndElement();
-                             } if (localPsTracker){
-                                    namespace = "http://bo.ws.fiap.com.br";
-                                    writeStartElement(null, namespace, "ps", xmlWriter);
+                             } if (localQuantidadeTracker){
+                                    namespace = "http://bean.loja.fiap.com/xsd";
+                                    writeStartElement(null, namespace, "quantidade", xmlWriter);
                              
-                                               if (java.lang.Float.isNaN(localPs)) {
+                                               if (localQuantidade==java.lang.Integer.MIN_VALUE) {
                                            
-                                                         throw new org.apache.axis2.databinding.ADBException("ps cannot be null!!");
+                                                         throw new org.apache.axis2.databinding.ADBException("quantidade cannot be null!!");
                                                       
                                                } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPs));
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localQuantidade));
                                                }
                                     
                                    xmlWriter.writeEndElement();
@@ -3292,8 +1998,8 @@
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://bo.ws.fiap.com.br")){
-                return "ns1";
+            if(namespace.equals("http://bean.loja.fiap.com/xsd")){
+                return "ns2";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -3470,24 +2176,36 @@
                  java.util.ArrayList elementList = new java.util.ArrayList();
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
-                 if (localNacTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                                      "nac"));
+                 if (localCodigoTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://bean.loja.fiap.com/xsd",
+                                                                      "codigo"));
                                  
                                 elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNac));
-                            } if (localAmTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                                      "am"));
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCodigo));
+                            } if (localMarcaTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://bean.loja.fiap.com/xsd",
+                                                                      "marca"));
+                                 
+                                         elementList.add(localMarca==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localMarca));
+                                    } if (localNomeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://bean.loja.fiap.com/xsd",
+                                                                      "nome"));
+                                 
+                                         elementList.add(localNome==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNome));
+                                    } if (localPrecoTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://bean.loja.fiap.com/xsd",
+                                                                      "preco"));
                                  
                                 elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAm));
-                            } if (localPsTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
-                                                                      "ps"));
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPreco));
+                            } if (localQuantidadeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://bean.loja.fiap.com/xsd",
+                                                                      "quantidade"));
                                  
                                 elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPs));
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localQuantidade));
                             }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -3513,9 +2231,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static CalcularMedia parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            CalcularMedia object =
-                new CalcularMedia();
+        public static ProdutoTO parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            ProdutoTO object =
+                new ProdutoTO();
 
             int event;
             java.lang.String nillableValue = null;
@@ -3539,10 +2257,10 @@
 
                     java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
                     
-                            if (!"calcularMedia".equals(type)){
+                            if (!"ProdutoTO".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (CalcularMedia)ExtensionMapper.getTypeObject(
+                                return (ProdutoTO)ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -3567,18 +2285,18 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.ws.fiap.com.br","nac").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bean.loja.fiap.com/xsd","codigo").equals(reader.getName())){
                                 
                                     nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                     if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"nac" +"  cannot be null");
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"codigo" +"  cannot be null");
                                     }
                                     
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setNac(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
+                                              object.setCodigo(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
                                               
                                         reader.next();
                                     
@@ -3586,25 +2304,81 @@
                                 
                                     else {
                                         
-                                               object.setNac(java.lang.Float.NaN);
+                                               object.setCodigo(java.lang.Integer.MIN_VALUE);
                                            
                                     }
                                 
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.ws.fiap.com.br","am").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bean.loja.fiap.com/xsd","marca").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setMarca(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bean.loja.fiap.com/xsd","nome").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setNome(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bean.loja.fiap.com/xsd","preco").equals(reader.getName())){
                                 
                                     nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                     if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"am" +"  cannot be null");
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"preco" +"  cannot be null");
                                     }
                                     
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setAm(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
+                                              object.setPreco(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDouble(content));
                                               
                                         reader.next();
                                     
@@ -3612,25 +2386,25 @@
                                 
                                     else {
                                         
-                                               object.setAm(java.lang.Float.NaN);
+                                               object.setPreco(java.lang.Double.NaN);
                                            
                                     }
                                 
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.ws.fiap.com.br","ps").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bean.loja.fiap.com/xsd","quantidade").equals(reader.getName())){
                                 
                                     nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                     if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"ps" +"  cannot be null");
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"quantidade" +"  cannot be null");
                                     }
                                     
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setPs(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
+                                              object.setQuantidade(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
                                               
                                         reader.next();
                                     
@@ -3638,7 +2412,7 @@
                                 
                                     else {
                                         
-                                               object.setPs(java.lang.Float.NaN);
+                                               object.setQuantidade(java.lang.Integer.MIN_VALUE);
                                            
                                     }
                                   
@@ -3666,13 +2440,13 @@
         }
            
     
-        public static class CalularPsMediaResponse
+        public static class ConsultarProdutoResponse
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://bo.ws.fiap.com.br",
-                "calularPsMediaResponse",
-                "ns1");
+                "http://bo.loja.fiap.com",
+                "consultarProdutoResponse",
+                "ns3");
 
             
 
@@ -3681,7 +2455,7 @@
                         */
 
                         
-                                    protected float local_return ;
+                                    protected ProdutoTO local_return ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
@@ -3697,9 +2471,9 @@
 
                            /**
                            * Auto generated getter method
-                           * @return float
+                           * @return ProdutoTO
                            */
-                           public  float get_return(){
+                           public  ProdutoTO get_return(){
                                return local_return;
                            }
 
@@ -3709,11 +2483,8 @@
                                * Auto generated setter method
                                * @param param _return
                                */
-                               public void set_return(float param){
-                            
-                                       // setting primitive attribute tracker to true
-                                       local_returnTracker =
-                                       !java.lang.Float.isNaN(param);
+                               public void set_return(ProdutoTO param){
+                            local_returnTracker = true;
                                    
                                             this.local_return=param;
                                     
@@ -3766,41 +2537,40 @@
                   if (serializeType){
                
 
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://bo.ws.fiap.com.br");
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://bo.loja.fiap.com");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":calularPsMediaResponse",
+                           namespacePrefix+":consultarProdutoResponse",
                            xmlWriter);
                    } else {
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "calularPsMediaResponse",
+                           "consultarProdutoResponse",
                            xmlWriter);
                    }
 
                
                    }
                 if (local_returnTracker){
-                                    namespace = "http://bo.ws.fiap.com.br";
-                                    writeStartElement(null, namespace, "return", xmlWriter);
-                             
-                                               if (java.lang.Float.isNaN(local_return)) {
-                                           
-                                                         throw new org.apache.axis2.databinding.ADBException("return cannot be null!!");
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(local_return));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                             }
+                                    if (local_return==null){
+
+                                        writeStartElement(null, "http://bo.loja.fiap.com", "return", xmlWriter);
+
+                                       // write the nil attribute
+                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                      xmlWriter.writeEndElement();
+                                    }else{
+                                     local_return.serialize(new javax.xml.namespace.QName("http://bo.loja.fiap.com","return"),
+                                        xmlWriter);
+                                    }
+                                }
                     xmlWriter.writeEndElement();
                
 
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://bo.ws.fiap.com.br")){
-                return "ns1";
+            if(namespace.equals("http://bo.loja.fiap.com")){
+                return "ns3";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -3978,11 +2748,453 @@
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
                  if (local_returnTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bo.ws.fiap.com.br",
+                            elementList.add(new javax.xml.namespace.QName("http://bo.loja.fiap.com",
                                                                       "return"));
+                            
+                            
+                                    elementList.add(local_return==null?null:
+                                    local_return);
+                                }
+
+                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
+            
+            
+
+        }
+
+  
+
+     /**
+      *  Factory class that keeps the parse method
+      */
+    public static class Factory{
+
+        
+        
+
+        /**
+        * static method to create the object
+        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
+        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+        * Postcondition: If this object is an element, the reader is positioned at its end element
+        *                If this object is a complex type, the reader is positioned at the end element of its outer element
+        */
+        public static ConsultarProdutoResponse parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            ConsultarProdutoResponse object =
+                new ConsultarProdutoResponse();
+
+            int event;
+            java.lang.String nillableValue = null;
+            java.lang.String prefix ="";
+            java.lang.String namespaceuri ="";
+            try {
+                
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                
+                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
+                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
+                        "type");
+                  if (fullTypeName!=null){
+                    java.lang.String nsPrefix = null;
+                    if (fullTypeName.indexOf(":") > -1){
+                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
+                    }
+                    nsPrefix = nsPrefix==null?"":nsPrefix;
+
+                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
+                    
+                            if (!"consultarProdutoResponse".equals(type)){
+                                //find namespace for the prefix
+                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
+                                return (ConsultarProdutoResponse)ExtensionMapper.getTypeObject(
+                                     nsUri,type,reader);
+                              }
+                        
+
+                  }
+                
+
+                }
+
+                
+
+                
+                // Note all attributes that were handled. Used to differ normal attributes
+                // from anyAttributes.
+                java.util.Vector handledAttributes = new java.util.Vector();
+                
+
+                
+                    
+                    reader.next();
+                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.loja.fiap.com","return").equals(reader.getName())){
+                                
+                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                          object.set_return(null);
+                                          reader.next();
+                                            
+                                            reader.next();
+                                          
+                                      }else{
+                                    
+                                                object.set_return(ProdutoTO.Factory.parse(reader));
+                                              
+                                        reader.next();
+                                    }
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                  
+                            while (!reader.isStartElement() && !reader.isEndElement())
+                                reader.next();
+                            
+                                if (reader.isStartElement())
+                                // A start element we are not expecting indicates a trailing invalid property
+                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                            
+
+
+
+            } catch (javax.xml.stream.XMLStreamException e) {
+                throw new java.lang.Exception(e);
+            }
+
+            return object;
+        }
+
+        }//end of factory class
+
+        
+
+        }
+           
+    
+        public static class ConsultarProduto
+        implements org.apache.axis2.databinding.ADBBean{
+        
+                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
+                "http://bo.loja.fiap.com",
+                "consultarProduto",
+                "ns3");
+
+            
+
+                        /**
+                        * field for Codigo
+                        */
+
+                        
+                                    protected int localCodigo ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localCodigoTracker = false ;
+
+                           public boolean isCodigoSpecified(){
+                               return localCodigoTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getCodigo(){
+                               return localCodigo;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Codigo
+                               */
+                               public void setCodigo(int param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       localCodigoTracker =
+                                       param != java.lang.Integer.MIN_VALUE;
+                                   
+                                            this.localCodigo=param;
+                                    
+
+                               }
+                            
+
+     
+     
+        /**
+        *
+        * @param parentQName
+        * @param factory
+        * @return org.apache.axiom.om.OMElement
+        */
+       public org.apache.axiom.om.OMElement getOMElement (
+               final javax.xml.namespace.QName parentQName,
+               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
+
+
+        
+               org.apache.axiom.om.OMDataSource dataSource =
+                       new org.apache.axis2.databinding.ADBDataSource(this,MY_QNAME);
+               return factory.createOMElement(dataSource,MY_QNAME);
+            
+        }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter)
+                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+                           serialize(parentQName,xmlWriter,false);
+         }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                               javax.xml.stream.XMLStreamWriter xmlWriter,
+                               boolean serializeType)
+            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+            
+                
+
+
+                java.lang.String prefix = null;
+                java.lang.String namespace = null;
+                
+
+                    prefix = parentQName.getPrefix();
+                    namespace = parentQName.getNamespaceURI();
+                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
+                
+                  if (serializeType){
+               
+
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://bo.loja.fiap.com");
+                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           namespacePrefix+":consultarProduto",
+                           xmlWriter);
+                   } else {
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           "consultarProduto",
+                           xmlWriter);
+                   }
+
+               
+                   }
+                if (localCodigoTracker){
+                                    namespace = "http://bo.loja.fiap.com";
+                                    writeStartElement(null, namespace, "codigo", xmlWriter);
+                             
+                                               if (localCodigo==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("codigo cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCodigo));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
+                    xmlWriter.writeEndElement();
+               
+
+        }
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://bo.loja.fiap.com")){
+                return "ns3";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        }
+
+        /**
+         * Utility method to write an element start tag.
+         */
+        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
+            if (writerPrefix != null) {
+                xmlWriter.writeStartElement(namespace, localPart);
+            } else {
+                if (namespace.length() == 0) {
+                    prefix = "";
+                } else if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+                }
+
+                xmlWriter.writeStartElement(prefix, localPart, namespace);
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+        }
+        
+        /**
+         * Util method to write an attribute with the ns prefix
+         */
+        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (xmlWriter.getPrefix(namespace) == null) {
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            xmlWriter.writeAttribute(namespace,attName,attValue);
+        }
+
+        /**
+         * Util method to write an attribute without the ns prefix
+         */
+        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (namespace.equals("")) {
+                xmlWriter.writeAttribute(attName,attValue);
+            } else {
+                registerPrefix(xmlWriter, namespace);
+                xmlWriter.writeAttribute(namespace,attName,attValue);
+            }
+        }
+
+
+           /**
+             * Util method to write an attribute without the ns prefix
+             */
+            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
+                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+                java.lang.String attributeNamespace = qname.getNamespaceURI();
+                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
+                if (attributePrefix == null) {
+                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
+                }
+                java.lang.String attributeValue;
+                if (attributePrefix.trim().length() > 0) {
+                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
+                } else {
+                    attributeValue = qname.getLocalPart();
+                }
+
+                if (namespace.equals("")) {
+                    xmlWriter.writeAttribute(attName, attributeValue);
+                } else {
+                    registerPrefix(xmlWriter, namespace);
+                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
+                }
+            }
+        /**
+         *  method to handle Qnames
+         */
+
+        private void writeQName(javax.xml.namespace.QName qname,
+                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String namespaceURI = qname.getNamespaceURI();
+            if (namespaceURI != null) {
+                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
+                if (prefix == null) {
+                    prefix = generatePrefix(namespaceURI);
+                    xmlWriter.writeNamespace(prefix, namespaceURI);
+                    xmlWriter.setPrefix(prefix,namespaceURI);
+                }
+
+                if (prefix.trim().length() > 0){
+                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                } else {
+                    // i.e this is the default namespace
+                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                }
+
+            } else {
+                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+            }
+        }
+
+        private void writeQNames(javax.xml.namespace.QName[] qnames,
+                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+            if (qnames != null) {
+                // we have to store this data until last moment since it is not possible to write any
+                // namespace data after writing the charactor data
+                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
+                java.lang.String namespaceURI = null;
+                java.lang.String prefix = null;
+
+                for (int i = 0; i < qnames.length; i++) {
+                    if (i > 0) {
+                        stringToWrite.append(" ");
+                    }
+                    namespaceURI = qnames[i].getNamespaceURI();
+                    if (namespaceURI != null) {
+                        prefix = xmlWriter.getPrefix(namespaceURI);
+                        if ((prefix == null) || (prefix.length() == 0)) {
+                            prefix = generatePrefix(namespaceURI);
+                            xmlWriter.writeNamespace(prefix, namespaceURI);
+                            xmlWriter.setPrefix(prefix,namespaceURI);
+                        }
+
+                        if (prefix.trim().length() > 0){
+                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        } else {
+                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        }
+                    } else {
+                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                    }
+                }
+                xmlWriter.writeCharacters(stringToWrite.toString());
+            }
+
+        }
+
+
+        /**
+         * Register a namespace prefix
+         */
+        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+            java.lang.String prefix = xmlWriter.getPrefix(namespace);
+            if (prefix == null) {
+                prefix = generatePrefix(namespace);
+                javax.xml.namespace.NamespaceContext nsContext = xmlWriter.getNamespaceContext();
+                while (true) {
+                    java.lang.String uri = nsContext.getNamespaceURI(prefix);
+                    if (uri == null || uri.length() == 0) {
+                        break;
+                    }
+                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                }
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            return prefix;
+        }
+
+
+  
+        /**
+        * databinding method to get an XML representation of this object
+        *
+        */
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
+                    throws org.apache.axis2.databinding.ADBException{
+
+
+        
+                 java.util.ArrayList elementList = new java.util.ArrayList();
+                 java.util.ArrayList attribList = new java.util.ArrayList();
+
+                 if (localCodigoTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://bo.loja.fiap.com",
+                                                                      "codigo"));
                                  
                                 elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(local_return));
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCodigo));
                             }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -4008,9 +3220,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static CalularPsMediaResponse parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            CalularPsMediaResponse object =
-                new CalularPsMediaResponse();
+        public static ConsultarProduto parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            ConsultarProduto object =
+                new ConsultarProduto();
 
             int event;
             java.lang.String nillableValue = null;
@@ -4034,10 +3246,10 @@
 
                     java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
                     
-                            if (!"calularPsMediaResponse".equals(type)){
+                            if (!"consultarProduto".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (CalularPsMediaResponse)ExtensionMapper.getTypeObject(
+                                return (ConsultarProduto)ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -4062,18 +3274,18 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.ws.fiap.com.br","return").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bo.loja.fiap.com","codigo").equals(reader.getName())){
                                 
                                     nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                     if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"return" +"  cannot be null");
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"codigo" +"  cannot be null");
                                     }
                                     
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.set_return(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
+                                              object.setCodigo(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
                                               
                                         reader.next();
                                     
@@ -4081,7 +3293,7 @@
                                 
                                     else {
                                         
-                                               object.set_return(java.lang.Float.NaN);
+                                               object.setCodigo(java.lang.Integer.MIN_VALUE);
                                            
                                     }
                                   
@@ -4109,12 +3321,12 @@
         }
            
     
-            private  org.apache.axiom.om.OMElement  toOM(br.com.fiap.ws.bo.FiapBOStub.CalularPsMedia param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(com.fiap.loja.bo.EstoqueBOStub.Listar param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(br.com.fiap.ws.bo.FiapBOStub.CalularPsMedia.MY_QNAME,
+                             return param.getOMElement(com.fiap.loja.bo.EstoqueBOStub.Listar.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -4123,12 +3335,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(br.com.fiap.ws.bo.FiapBOStub.CalularPsMediaResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(com.fiap.loja.bo.EstoqueBOStub.ListarResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(br.com.fiap.ws.bo.FiapBOStub.CalularPsMediaResponse.MY_QNAME,
+                             return param.getOMElement(com.fiap.loja.bo.EstoqueBOStub.ListarResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -4137,12 +3349,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(br.com.fiap.ws.bo.FiapBOStub.CalcularPs param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(com.fiap.loja.bo.EstoqueBOStub.ConsultarProduto param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(br.com.fiap.ws.bo.FiapBOStub.CalcularPs.MY_QNAME,
+                             return param.getOMElement(com.fiap.loja.bo.EstoqueBOStub.ConsultarProduto.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -4151,40 +3363,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(br.com.fiap.ws.bo.FiapBOStub.CalcularPsResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(com.fiap.loja.bo.EstoqueBOStub.ConsultarProdutoResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(br.com.fiap.ws.bo.FiapBOStub.CalcularPsResponse.MY_QNAME,
-                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-                        } catch(org.apache.axis2.databinding.ADBException e){
-                            throw org.apache.axis2.AxisFault.makeFault(e);
-                        }
-                    
-
-            }
-        
-            private  org.apache.axiom.om.OMElement  toOM(br.com.fiap.ws.bo.FiapBOStub.CalcularMedia param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-            
-                        try{
-                             return param.getOMElement(br.com.fiap.ws.bo.FiapBOStub.CalcularMedia.MY_QNAME,
-                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-                        } catch(org.apache.axis2.databinding.ADBException e){
-                            throw org.apache.axis2.AxisFault.makeFault(e);
-                        }
-                    
-
-            }
-        
-            private  org.apache.axiom.om.OMElement  toOM(br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-            
-                        try{
-                             return param.getOMElement(br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse.MY_QNAME,
+                             return param.getOMElement(com.fiap.loja.bo.EstoqueBOStub.ConsultarProdutoResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -4194,14 +3378,14 @@
             }
         
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, br.com.fiap.ws.bo.FiapBOStub.CalularPsMedia param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, com.fiap.loja.bo.EstoqueBOStub.Listar param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(br.com.fiap.ws.bo.FiapBOStub.CalularPsMedia.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(com.fiap.loja.bo.EstoqueBOStub.Listar.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -4215,35 +3399,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, br.com.fiap.ws.bo.FiapBOStub.CalcularPs param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, com.fiap.loja.bo.EstoqueBOStub.ConsultarProduto param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(br.com.fiap.ws.bo.FiapBOStub.CalcularPs.MY_QNAME,factory));
-                                                            return emptyEnvelope;
-                                                        } catch(org.apache.axis2.databinding.ADBException e){
-                                                            throw org.apache.axis2.AxisFault.makeFault(e);
-                                                        }
-                                                
-
-                                        }
-                                
-                             
-                             /* methods to provide back word compatibility */
-
-                             
-                                    
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, br.com.fiap.ws.bo.FiapBOStub.CalcularMedia param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
-                                        throws org.apache.axis2.AxisFault{
-
-                                             
-                                                    try{
-
-                                                            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(br.com.fiap.ws.bo.FiapBOStub.CalcularMedia.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(com.fiap.loja.bo.EstoqueBOStub.ConsultarProduto.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -4273,44 +3436,30 @@
 
         try {
         
-                if (br.com.fiap.ws.bo.FiapBOStub.CalularPsMedia.class.equals(type)){
+                if (com.fiap.loja.bo.EstoqueBOStub.Listar.class.equals(type)){
                 
-                           return br.com.fiap.ws.bo.FiapBOStub.CalularPsMedia.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return com.fiap.loja.bo.EstoqueBOStub.Listar.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (br.com.fiap.ws.bo.FiapBOStub.CalularPsMediaResponse.class.equals(type)){
+                if (com.fiap.loja.bo.EstoqueBOStub.ListarResponse.class.equals(type)){
                 
-                           return br.com.fiap.ws.bo.FiapBOStub.CalularPsMediaResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return com.fiap.loja.bo.EstoqueBOStub.ListarResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (br.com.fiap.ws.bo.FiapBOStub.CalcularPs.class.equals(type)){
+                if (com.fiap.loja.bo.EstoqueBOStub.ConsultarProduto.class.equals(type)){
                 
-                           return br.com.fiap.ws.bo.FiapBOStub.CalcularPs.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return com.fiap.loja.bo.EstoqueBOStub.ConsultarProduto.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (br.com.fiap.ws.bo.FiapBOStub.CalcularPsResponse.class.equals(type)){
+                if (com.fiap.loja.bo.EstoqueBOStub.ConsultarProdutoResponse.class.equals(type)){
                 
-                           return br.com.fiap.ws.bo.FiapBOStub.CalcularPsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-                    
-
-                }
-           
-                if (br.com.fiap.ws.bo.FiapBOStub.CalcularMedia.class.equals(type)){
-                
-                           return br.com.fiap.ws.bo.FiapBOStub.CalcularMedia.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-                    
-
-                }
-           
-                if (br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse.class.equals(type)){
-                
-                           return br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return com.fiap.loja.bo.EstoqueBOStub.ConsultarProdutoResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }

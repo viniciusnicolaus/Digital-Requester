@@ -45,35 +45,19 @@
 
         
            /**
-            * auto generated Axis2 call back method for calcularPsMedia method
-            * override this method for handling normal response from calcularPsMedia operation
+            * auto generated Axis2 call back method for calularPsMedia method
+            * override this method for handling normal response from calularPsMedia operation
             */
-           public void receiveResultcalcularPsMedia(
-                    br.com.fiap.ws.bo.FiapBOStub.CalcularPsMediaResponse result
+           public void receiveResultcalularPsMedia(
+                    br.com.fiap.ws.bo.FiapBOStub.CalularPsMediaResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from calcularPsMedia operation
+           * override this method for handling error response from calularPsMedia operation
            */
-            public void receiveErrorcalcularPsMedia(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for calcularMedia method
-            * override this method for handling normal response from calcularMedia operation
-            */
-           public void receiveResultcalcularMedia(
-                    br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from calcularMedia operation
-           */
-            public void receiveErrorcalcularMedia(java.lang.Exception e) {
+            public void receiveErrorcalularPsMedia(java.lang.Exception e) {
             }
                 
            /**
@@ -90,6 +74,22 @@
            * override this method for handling error response from calcularPs operation
            */
             public void receiveErrorcalcularPs(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for calcularMedia method
+            * override this method for handling normal response from calcularMedia operation
+            */
+           public void receiveResultcalcularMedia(
+                    br.com.fiap.ws.bo.FiapBOStub.CalcularMediaResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from calcularMedia operation
+           */
+            public void receiveErrorcalcularMedia(java.lang.Exception e) {
             }
                 
 
